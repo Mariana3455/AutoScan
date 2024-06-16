@@ -13,10 +13,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     let recognizeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Recognize", for: .normal)
+        button.setTitle("Get Started", for: .normal)
         button.addTarget(self, action: #selector(recognizeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor.gray
+        button.backgroundColor = UIColor(named: "MainColor")
         button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 10
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
@@ -32,10 +32,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            recognizeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            recognizeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            recognizeButton.widthAnchor.constraint(equalToConstant: 200),
-            recognizeButton.heightAnchor.constraint(equalToConstant: 60)
+            recognizeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -118),
+            recognizeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 132),
+            recognizeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -132),
+            recognizeButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
 

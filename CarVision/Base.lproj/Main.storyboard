@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,11 +12,54 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarVision" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Vgz-oR-SjD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.42630682912813567" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-eX-RQ9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="300"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.69803921570000005" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="bOq-Zb-Alb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6t-80-cBr">
+                                <rect key="frame" x="88" y="419" width="217" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TGB-C5-bQZ"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Welcome to Car Vision ">
+                                        <attributes>
+                                            <font key="NSFont" size="21" name="PTSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify any car instantly using AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTv-Xv-ZEW">
+                                <rect key="frame" x="40" y="509" width="313" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JDn-oG-MTd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BIq-kK-SgG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BIq-kK-SgG" firstAttribute="trailing" secondItem="Aye-eX-RQ9" secondAttribute="trailing" id="BgR-sh-iO2"/>
+                            <constraint firstItem="c6t-80-cBr" firstAttribute="leading" secondItem="BIq-kK-SgG" secondAttribute="leading" constant="88" id="P7i-wy-sGy"/>
+                            <constraint firstItem="c6t-80-cBr" firstAttribute="top" secondItem="Aye-eX-RQ9" secondAttribute="bottom" constant="60" id="ReT-c4-WgB"/>
+                            <constraint firstItem="dTv-Xv-ZEW" firstAttribute="leading" secondItem="BIq-kK-SgG" secondAttribute="leading" constant="40" id="dAR-tH-QVT"/>
+                            <constraint firstItem="BIq-kK-SgG" firstAttribute="trailing" secondItem="c6t-80-cBr" secondAttribute="trailing" constant="88" id="gCx-3z-Dlu"/>
+                            <constraint firstItem="dTv-Xv-ZEW" firstAttribute="top" secondItem="c6t-80-cBr" secondAttribute="bottom" constant="60" id="sWV-G4-sfR"/>
+                            <constraint firstItem="Aye-eX-RQ9" firstAttribute="leading" secondItem="BIq-kK-SgG" secondAttribute="leading" id="uqQ-nZ-eqM"/>
+                            <constraint firstItem="BIq-kK-SgG" firstAttribute="trailing" secondItem="dTv-Xv-ZEW" secondAttribute="trailing" constant="40" id="vB3-me-SJ8"/>
+                            <constraint firstItem="Aye-eX-RQ9" firstAttribute="top" secondItem="BIq-kK-SgG" secondAttribute="top" id="vSJ-Lg-342"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -23,4 +67,9 @@
             <point key="canvasLocation" x="34" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
