@@ -12,25 +12,25 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eVB-ms-Qu8">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="te6-3S-aU3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
                                 <rect key="frame" x="0.0" y="832" width="393" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xH2-la-5JA">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0mF-fe-izo">
                                 <rect key="frame" x="101.66666666666669" y="420.66666666666669" width="190" height="36"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mu8-t7-Aof">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-Eg-c5G">
                                         <rect key="frame" x="0.0" y="6.3333333333332948" width="53.333333333333336" height="23.666666666666671"/>
-                                        <color key="tintColor" red="0.94509803920000002" green="0.69803921570000005" blue="0.47450980390000003" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.94509803921568625" green="0.69803921568627447" blue="0.47450980392156861" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                         <imageReference key="image" image="car.rear.fill" catalog="system" symbolScale="large"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarVision" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="tXE-jO-yya">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarVision" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
                                         <rect key="frame" x="53.333333333333329" y="0.0" width="136.66666666666669" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,18 +38,18 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="Uxg-Dp-owb"/>
+                                    <constraint firstAttribute="width" constant="190" id="0Cf-ro-GCQ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="dxa-WS-WfC"/>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dxa-WS-WfC" firstAttribute="centerX" secondItem="te6-3S-aU3" secondAttribute="centerX" id="ALK-Rm-QVy"/>
-                            <constraint firstItem="te6-3S-aU3" firstAttribute="leading" secondItem="dxa-WS-WfC" secondAttribute="leading" symbolic="YES" id="PbJ-Er-z4o"/>
-                            <constraint firstAttribute="bottom" secondItem="te6-3S-aU3" secondAttribute="bottom" constant="20" id="c55-ff-VAP"/>
-                            <constraint firstItem="xH2-la-5JA" firstAttribute="centerY" secondItem="dxa-WS-WfC" secondAttribute="centerY" id="daf-ld-O34"/>
-                            <constraint firstItem="xH2-la-5JA" firstAttribute="centerX" secondItem="dxa-WS-WfC" secondAttribute="centerX" id="p35-SY-ruk"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
+                            <constraint firstItem="0mF-fe-izo" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="A4p-Dx-7nm"/>
+                            <constraint firstItem="0mF-fe-izo" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="RPz-34-4SJ"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
                         </constraints>
                     </view>
                 </viewController>
