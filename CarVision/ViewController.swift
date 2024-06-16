@@ -6,112 +6,30 @@
 //
 
 import UIKit
-import CoreML
-import Vision
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    let recognizeButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Get Started", for: .normal)
-        button.addTarget(self, action: #selector(recognizeButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(named: "MainColor")
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.layer.cornerRadius = 10
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        return button
-    }()
+class ViewController: UIViewController {
+    
+    @IBOutlet private weak var squareView: UIView!
+    
+    @IBOutlet private weak var squareWhiteView: UIView!
+    
+    @IBOutlet private weak var getStartedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        squareView.layer.cornerRadius = 30
+        squareView.layer.masksToBounds = true
+        let path = UIBezierPath(roundedRect: squareWhiteView.bounds,
+                                byRoundingCorners: [.topLeft, .topRight],
+                                cornerRadii: CGSize(width: 30, height: 30))
         
-        view.addSubview(recognizeButton)
-        setupConstraints()
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        squareWhiteView.layer.mask = mask
+        getStartedButton.layer.cornerRadius = 15
+        getStartedButton.layer.masksToBounds = true
+        
     }
     
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            recognizeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -118),
-            recognizeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 132),
-            recognizeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -132),
-            recognizeButton.heightAnchor.constraint(equalToConstant: 48)
-        ])
-    }
-
-    @objc func recognizeButtonTapped() {
-        let alert = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
-            self.openCamera()
-        }))
-        alert.addAction(UIAlertAction(title: "Choose from Library", style: .default, handler: { _ in
-            self.openPhotoLibrary()
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
-    }
-
-    func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-
-    func openPhotoLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        if let image = info[.originalImage] as? UIImage {
-            recognizeCar(in: image)
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func recognizeCar(in image: UIImage) {
-        guard let model = try? VNCoreMLModel(for: CarsImgClassifier().model) else {
-            fatalError("Could not load model")
-        }
-        
-        let request = VNCoreMLRequest(model: model) { (request, error) in
-            if let results = request.results as? [VNClassificationObservation] {
-                if let topResult = results.first {
-                    let carModel = topResult.identifier
-                    print("Recognized car model: \(carModel)")
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Recognition Result", message: "Car: \(carModel)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                }
-            }
-        }
-        
-        guard let ciImage = CIImage(image: image) else {
-            fatalError("Could not convert UIImage to CIImage")
-        }
-        
-        let handler = VNImageRequestHandler(ciImage: ciImage)
-        DispatchQueue.global().async {
-            do {
-                try handler.perform([request])
-            } catch {
-                print("Failed to perform request: \(error)")
-            }
-        }
-    }
 }
 
