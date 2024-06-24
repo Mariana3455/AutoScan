@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E180E222C26E1F000AC41D0 /* CarsImgClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */; };
+		0E180E302C27063E00AC41D0 /* CurrentVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */; };
+		0E24D6ED2C27807A00DDEAF9 /* CarsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */; };
+		0E24D6F42C27F8D200DDEAF9 /* CarDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */; };
+		0E24D7102C2801B900DDEAF9 /* car_data2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D70D2C2801B900DDEAF9 /* car_data2.csv */; };
+		0E24D7142C2831F700DDEAF9 /* audi_a7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */; };
+		0E24D7182C28785B00DDEAF9 /* SavedCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */; };
+		0E24D71A2C287A6F00DDEAF9 /* CarInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */; };
+		0E24D7282C298A1D00DDEAF9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */; };
+		0E599C352C298CE800B9CB92 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E599C342C298CE800B9CB92 /* Utilities.swift */; };
 		0E809E2B2C1F545400E11BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */; };
 		0E809E2D2C1F545400E11BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */; };
 		0E809E2F2C1F545400E11BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2E2C1F545400E11BC8 /* ViewController.swift */; };
@@ -15,10 +23,23 @@
 		0E809E342C1F545500E11BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E809E332C1F545500E11BC8 /* Assets.xcassets */; };
 		0E809E372C1F545500E11BC8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0E809E362C1F545500E11BC8 /* Base */; };
 		0EBAF0342C1F564D002FD85E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAF0332C1F564D002FD85E /* StartViewController.swift */; };
+		0EE801622C29CF1D0091DCDC /* YOLOv3.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 0EE801612C29CF1D0091DCDC /* YOLOv3.mlmodelc */; };
+		169054FB2C2A05CB0068238B /* CarsClassifier.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 169054FA2C2A05CB0068238B /* CarsClassifier.mlmodelc */; };
+		169054FD2C2A09F50068238B /* car2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 169054FC2C2A09F50068238B /* car2.scn */; };
+		169054FF2C2A0A020068238B /* scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 169054FE2C2A0A020068238B /* scene.scn */; };
+		169055012C2A12910068238B /* car3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 169055002C2A12910068238B /* car3.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CarsImgClassifier.mlmodel; path = ../../../Downloads/CarsImgClassifier.mlmodel; sourceTree = "<group>"; };
+		0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVehicleController.swift; sourceTree = "<group>"; };
+		0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarsClassifier.mlmodel; sourceTree = "<group>"; };
+		0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataParser.swift; sourceTree = "<group>"; };
+		0E24D70D2C2801B900DDEAF9 /* car_data2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car_data2.csv; sourceTree = "<group>"; };
+		0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = audi_a7.jpeg; sourceTree = "<group>"; };
+		0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCarsViewController.swift; sourceTree = "<group>"; };
+		0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoTableViewCell.swift; sourceTree = "<group>"; };
+		0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		0E599C342C298CE800B9CB92 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0E809E272C1F545400E11BC8 /* CarVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +49,11 @@
 		0E809E362C1F545500E11BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E809E382C1F545500E11BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EBAF0332C1F564D002FD85E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		0EE801612C29CF1D0091DCDC /* YOLOv3.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = YOLOv3.mlmodelc; sourceTree = "<group>"; };
+		169054FA2C2A05CB0068238B /* CarsClassifier.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CarsClassifier.mlmodelc; path = ../../../Downloads/CarsClassifier.mlmodelc; sourceTree = "<group>"; };
+		169054FC2C2A09F50068238B /* car2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car2.scn; sourceTree = "<group>"; };
+		169054FE2C2A0A020068238B /* scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = scene.scn; sourceTree = "<group>"; };
+		169055002C2A12910068238B /* car3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car3.scn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +86,16 @@
 		0E809E292C1F545400E11BC8 /* CarVision */ = {
 			isa = PBXGroup;
 			children = (
-				0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */,
+				0EE801612C29CF1D0091DCDC /* YOLOv3.mlmodelc */,
+				0E599C342C298CE800B9CB92 /* Utilities.swift */,
+				0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */,
+				169054FC2C2A09F50068238B /* car2.scn */,
+				169054FE2C2A0A020068238B /* scene.scn */,
+				169055002C2A12910068238B /* car3.scn */,
+				0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */,
+				0E24D70D2C2801B900DDEAF9 /* car_data2.csv */,
+				169054FA2C2A05CB0068238B /* CarsClassifier.mlmodelc */,
+				0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */,
 				0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */,
 				0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */,
 				0E809E2E2C1F545400E11BC8 /* ViewController.swift */,
@@ -69,6 +104,10 @@
 				0E809E352C1F545500E11BC8 /* LaunchScreen.storyboard */,
 				0E809E382C1F545500E11BC8 /* Info.plist */,
 				0EBAF0332C1F564D002FD85E /* StartViewController.swift */,
+				0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */,
+				0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */,
+				0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */,
+				0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */,
 			);
 			path = CarVision;
 			sourceTree = "<group>";
@@ -89,6 +128,8 @@
 			dependencies = (
 			);
 			name = CarVision;
+			packageProductDependencies = (
+			);
 			productName = CarVision;
 			productReference = 0E809E272C1F545400E11BC8 /* CarVision.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 0E809E1E2C1F545400E11BC8;
+			packageReferences = (
+				0E24D6F52C27F9AE00DDEAF9 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = 0E809E282C1F545400E11BC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,9 +175,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE801622C29CF1D0091DCDC /* YOLOv3.mlmodelc in Resources */,
+				169054FF2C2A0A020068238B /* scene.scn in Resources */,
+				169054FD2C2A09F50068238B /* car2.scn in Resources */,
+				0E24D7142C2831F700DDEAF9 /* audi_a7.jpeg in Resources */,
 				0E809E342C1F545500E11BC8 /* Assets.xcassets in Resources */,
+				169055012C2A12910068238B /* car3.scn in Resources */,
 				0E809E372C1F545500E11BC8 /* Base in Resources */,
 				0E809E322C1F545400E11BC8 /* Base in Resources */,
+				169054FB2C2A05CB0068238B /* CarsClassifier.mlmodelc in Resources */,
+				0E24D7102C2801B900DDEAF9 /* car_data2.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,11 +195,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E180E222C26E1F000AC41D0 /* CarsImgClassifier.mlmodel in Sources */,
 				0E809E2F2C1F545400E11BC8 /* ViewController.swift in Sources */,
 				0EBAF0342C1F564D002FD85E /* StartViewController.swift in Sources */,
+				0E599C352C298CE800B9CB92 /* Utilities.swift in Sources */,
 				0E809E2B2C1F545400E11BC8 /* AppDelegate.swift in Sources */,
+				0E24D7182C28785B00DDEAF9 /* SavedCarsViewController.swift in Sources */,
+				0E24D6F42C27F8D200DDEAF9 /* CarDataParser.swift in Sources */,
+				0E180E302C27063E00AC41D0 /* CurrentVehicleController.swift in Sources */,
+				0E24D6ED2C27807A00DDEAF9 /* CarsClassifier.mlmodel in Sources */,
+				0E24D71A2C287A6F00DDEAF9 /* CarInfoTableViewCell.swift in Sources */,
 				0E809E2D2C1F545400E11BC8 /* SceneDelegate.swift in Sources */,
+				0E24D7282C298A1D00DDEAF9 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Q9D79NBA2;
+				DEVELOPMENT_TEAM = GDT3GT22C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarVision/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -308,12 +365,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.dekhtiarenko.CarVision;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.CarVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Q9D79NBA2;
+				DEVELOPMENT_TEAM = GDT3GT22C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarVision/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -336,12 +394,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.dekhtiarenko.CarVision;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.CarVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -371,6 +430,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E24D6F52C27F9AE00DDEAF9 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 0E809E1F2C1F545400E11BC8 /* Project object */;
 }
