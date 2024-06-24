@@ -1,0 +1,4615 @@
+{
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_1",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_1_output",
+      "blob_weights" : 3,
+      "K" : 3,
+      "blob_biases" : 1,
+      "name" : "conv2d_1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "image",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_1_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_1",
+      "top" : "leaky_re_lu_1_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_1"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_2",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "batch_normalization_2_output",
+      "blob_weights" : 7,
+      "K" : 32,
+      "blob_biases" : 5,
+      "stride_x" : 2,
+      "name" : "conv2d_2",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 1,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "leaky_re_lu_1_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_2_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_2",
+      "top" : "leaky_re_lu_2_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_2"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_3",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_3_output",
+      "blob_weights" : 11,
+      "K" : 64,
+      "blob_biases" : 9,
+      "name" : "conv2d_3",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "leaky_re_lu_2_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_3_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_3",
+      "top" : "leaky_re_lu_3_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_3"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_4",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_4_output",
+      "blob_weights" : 15,
+      "K" : 32,
+      "blob_biases" : 13,
+      "name" : "conv2d_4",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "leaky_re_lu_3_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_4_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_4",
+      "top" : "leaky_re_lu_4_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_4"
+    },
+    {
+      "bottom" : "leaky_re_lu_2_output,leaky_re_lu_4_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_1",
+      "top" : "add_1_output",
+      "type" : "elementwise",
+      "name" : "add_1",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_5",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "batch_normalization_5_output",
+      "blob_weights" : 19,
+      "K" : 64,
+      "blob_biases" : 17,
+      "stride_x" : 2,
+      "name" : "conv2d_5",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 1,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_1_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_5_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_5",
+      "top" : "leaky_re_lu_5_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_5"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_6",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_6_output",
+      "blob_weights" : 23,
+      "K" : 128,
+      "blob_biases" : 21,
+      "name" : "conv2d_6",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "leaky_re_lu_5_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_6_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_6",
+      "top" : "leaky_re_lu_6_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_6"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_7",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_7_output",
+      "blob_weights" : 27,
+      "K" : 64,
+      "blob_biases" : 25,
+      "name" : "conv2d_7",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_6_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_7_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_7",
+      "top" : "leaky_re_lu_7_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_7"
+    },
+    {
+      "bottom" : "leaky_re_lu_5_output,leaky_re_lu_7_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_2",
+      "top" : "add_2_output",
+      "type" : "elementwise",
+      "name" : "add_2",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_8",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_8_output",
+      "blob_weights" : 31,
+      "K" : 128,
+      "blob_biases" : 29,
+      "name" : "conv2d_8",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "add_2_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_8_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_8",
+      "top" : "leaky_re_lu_8_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_8"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_9",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_9_output",
+      "blob_weights" : 35,
+      "K" : 64,
+      "blob_biases" : 33,
+      "name" : "conv2d_9",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_8_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_9_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_9",
+      "top" : "leaky_re_lu_9_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_9"
+    },
+    {
+      "bottom" : "add_2_output,leaky_re_lu_9_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_3",
+      "top" : "add_3_output",
+      "type" : "elementwise",
+      "name" : "add_3",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_10",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "batch_normalization_10_output",
+      "blob_weights" : 39,
+      "K" : 128,
+      "blob_biases" : 37,
+      "stride_x" : 2,
+      "name" : "conv2d_10",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 1,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_3_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_10_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_10",
+      "top" : "leaky_re_lu_10_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_10"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_11",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_11_output",
+      "blob_weights" : 43,
+      "K" : 256,
+      "blob_biases" : 41,
+      "name" : "conv2d_11",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_10_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_11_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_11",
+      "top" : "leaky_re_lu_11_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_11"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_12",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_12_output",
+      "blob_weights" : 47,
+      "K" : 128,
+      "blob_biases" : 45,
+      "name" : "conv2d_12",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_11_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_12_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_12",
+      "top" : "leaky_re_lu_12_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_12"
+    },
+    {
+      "bottom" : "leaky_re_lu_10_output,leaky_re_lu_12_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_4",
+      "top" : "add_4_output",
+      "type" : "elementwise",
+      "name" : "add_4",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_13",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_13_output",
+      "blob_weights" : 51,
+      "K" : 256,
+      "blob_biases" : 49,
+      "name" : "conv2d_13",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_4_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_13_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_13",
+      "top" : "leaky_re_lu_13_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_13"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_14",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_14_output",
+      "blob_weights" : 55,
+      "K" : 128,
+      "blob_biases" : 53,
+      "name" : "conv2d_14",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_13_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_14_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_14",
+      "top" : "leaky_re_lu_14_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_14"
+    },
+    {
+      "bottom" : "add_4_output,leaky_re_lu_14_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_5",
+      "top" : "add_5_output",
+      "type" : "elementwise",
+      "name" : "add_5",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_15",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_15_output",
+      "blob_weights" : 59,
+      "K" : 256,
+      "blob_biases" : 57,
+      "name" : "conv2d_15",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_5_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_15_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_15",
+      "top" : "leaky_re_lu_15_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_15"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_16",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_16_output",
+      "blob_weights" : 63,
+      "K" : 128,
+      "blob_biases" : 61,
+      "name" : "conv2d_16",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_15_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_16_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_16",
+      "top" : "leaky_re_lu_16_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_16"
+    },
+    {
+      "bottom" : "add_5_output,leaky_re_lu_16_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_6",
+      "top" : "add_6_output",
+      "type" : "elementwise",
+      "name" : "add_6",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_17",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_17_output",
+      "blob_weights" : 67,
+      "K" : 256,
+      "blob_biases" : 65,
+      "name" : "conv2d_17",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_6_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_17_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_17",
+      "top" : "leaky_re_lu_17_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_17"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_18",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_18_output",
+      "blob_weights" : 71,
+      "K" : 128,
+      "blob_biases" : 69,
+      "name" : "conv2d_18",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_17_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_18_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_18",
+      "top" : "leaky_re_lu_18_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_18"
+    },
+    {
+      "bottom" : "add_6_output,leaky_re_lu_18_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_7",
+      "top" : "add_7_output",
+      "type" : "elementwise",
+      "name" : "add_7",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_19",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_19_output",
+      "blob_weights" : 75,
+      "K" : 256,
+      "blob_biases" : 73,
+      "name" : "conv2d_19",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_7_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_19_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_19",
+      "top" : "leaky_re_lu_19_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_19"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_20",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_20_output",
+      "blob_weights" : 79,
+      "K" : 128,
+      "blob_biases" : 77,
+      "name" : "conv2d_20",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_19_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_20_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_20",
+      "top" : "leaky_re_lu_20_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_20"
+    },
+    {
+      "bottom" : "add_7_output,leaky_re_lu_20_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_8",
+      "top" : "add_8_output",
+      "type" : "elementwise",
+      "name" : "add_8",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_21",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_21_output",
+      "blob_weights" : 83,
+      "K" : 256,
+      "blob_biases" : 81,
+      "name" : "conv2d_21",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_8_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_21_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_21",
+      "top" : "leaky_re_lu_21_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_21"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_22",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_22_output",
+      "blob_weights" : 87,
+      "K" : 128,
+      "blob_biases" : 85,
+      "name" : "conv2d_22",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_21_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_22_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_22",
+      "top" : "leaky_re_lu_22_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_22"
+    },
+    {
+      "bottom" : "add_8_output,leaky_re_lu_22_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_9",
+      "top" : "add_9_output",
+      "type" : "elementwise",
+      "name" : "add_9",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_23",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_23_output",
+      "blob_weights" : 91,
+      "K" : 256,
+      "blob_biases" : 89,
+      "name" : "conv2d_23",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_9_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_23_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_23",
+      "top" : "leaky_re_lu_23_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_23"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_24",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_24_output",
+      "blob_weights" : 95,
+      "K" : 128,
+      "blob_biases" : 93,
+      "name" : "conv2d_24",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_23_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_24_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_24",
+      "top" : "leaky_re_lu_24_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_24"
+    },
+    {
+      "bottom" : "add_9_output,leaky_re_lu_24_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_10",
+      "top" : "add_10_output",
+      "type" : "elementwise",
+      "name" : "add_10",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_25",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_25_output",
+      "blob_weights" : 99,
+      "K" : 256,
+      "blob_biases" : 97,
+      "name" : "conv2d_25",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "add_10_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_25_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_25",
+      "top" : "leaky_re_lu_25_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_25"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_26",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_26_output",
+      "blob_weights" : 103,
+      "K" : 128,
+      "blob_biases" : 101,
+      "name" : "conv2d_26",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_25_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_26_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_26",
+      "top" : "leaky_re_lu_26_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_26"
+    },
+    {
+      "bottom" : "add_10_output,leaky_re_lu_26_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_11",
+      "top" : "add_11_output",
+      "type" : "elementwise",
+      "name" : "add_11",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_27",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "batch_normalization_27_output",
+      "blob_weights" : 107,
+      "K" : 256,
+      "blob_biases" : 105,
+      "stride_x" : 2,
+      "name" : "conv2d_27",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 1,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "add_11_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_27_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_27",
+      "top" : "leaky_re_lu_27_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_27"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_28",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_28_output",
+      "blob_weights" : 111,
+      "K" : 512,
+      "blob_biases" : 109,
+      "name" : "conv2d_28",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_27_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_28_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_28",
+      "top" : "leaky_re_lu_28_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_28"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_29",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_29_output",
+      "blob_weights" : 115,
+      "K" : 256,
+      "blob_biases" : 113,
+      "name" : "conv2d_29",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_28_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_29_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_29",
+      "top" : "leaky_re_lu_29_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_29"
+    },
+    {
+      "bottom" : "leaky_re_lu_27_output,leaky_re_lu_29_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_12",
+      "top" : "add_12_output",
+      "type" : "elementwise",
+      "name" : "add_12",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_30",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_30_output",
+      "blob_weights" : 119,
+      "K" : 512,
+      "blob_biases" : 117,
+      "name" : "conv2d_30",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_12_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_30_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_30",
+      "top" : "leaky_re_lu_30_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_30"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_31",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_31_output",
+      "blob_weights" : 123,
+      "K" : 256,
+      "blob_biases" : 121,
+      "name" : "conv2d_31",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_30_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_31_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_31",
+      "top" : "leaky_re_lu_31_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_31"
+    },
+    {
+      "bottom" : "add_12_output,leaky_re_lu_31_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_13",
+      "top" : "add_13_output",
+      "type" : "elementwise",
+      "name" : "add_13",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_32",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_32_output",
+      "blob_weights" : 127,
+      "K" : 512,
+      "blob_biases" : 125,
+      "name" : "conv2d_32",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_13_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_32_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_32",
+      "top" : "leaky_re_lu_32_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_32"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_33",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_33_output",
+      "blob_weights" : 131,
+      "K" : 256,
+      "blob_biases" : 129,
+      "name" : "conv2d_33",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_32_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_33_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_33",
+      "top" : "leaky_re_lu_33_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_33"
+    },
+    {
+      "bottom" : "add_13_output,leaky_re_lu_33_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_14",
+      "top" : "add_14_output",
+      "type" : "elementwise",
+      "name" : "add_14",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_34",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_34_output",
+      "blob_weights" : 135,
+      "K" : 512,
+      "blob_biases" : 133,
+      "name" : "conv2d_34",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_14_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_34_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_34",
+      "top" : "leaky_re_lu_34_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_34"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_35",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_35_output",
+      "blob_weights" : 139,
+      "K" : 256,
+      "blob_biases" : 137,
+      "name" : "conv2d_35",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_34_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_35_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_35",
+      "top" : "leaky_re_lu_35_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_35"
+    },
+    {
+      "bottom" : "add_14_output,leaky_re_lu_35_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_15",
+      "top" : "add_15_output",
+      "type" : "elementwise",
+      "name" : "add_15",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_36",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_36_output",
+      "blob_weights" : 143,
+      "K" : 512,
+      "blob_biases" : 141,
+      "name" : "conv2d_36",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_15_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_36_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_36",
+      "top" : "leaky_re_lu_36_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_36"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_37",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_37_output",
+      "blob_weights" : 147,
+      "K" : 256,
+      "blob_biases" : 145,
+      "name" : "conv2d_37",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_36_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_37_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_37",
+      "top" : "leaky_re_lu_37_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_37"
+    },
+    {
+      "bottom" : "add_15_output,leaky_re_lu_37_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_16",
+      "top" : "add_16_output",
+      "type" : "elementwise",
+      "name" : "add_16",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_38",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_38_output",
+      "blob_weights" : 151,
+      "K" : 512,
+      "blob_biases" : 149,
+      "name" : "conv2d_38",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_16_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_38_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_38",
+      "top" : "leaky_re_lu_38_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_38"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_39",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_39_output",
+      "blob_weights" : 155,
+      "K" : 256,
+      "blob_biases" : 153,
+      "name" : "conv2d_39",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_38_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_39_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_39",
+      "top" : "leaky_re_lu_39_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_39"
+    },
+    {
+      "bottom" : "add_16_output,leaky_re_lu_39_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_17",
+      "top" : "add_17_output",
+      "type" : "elementwise",
+      "name" : "add_17",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_40",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_40_output",
+      "blob_weights" : 159,
+      "K" : 512,
+      "blob_biases" : 157,
+      "name" : "conv2d_40",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_17_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_40_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_40",
+      "top" : "leaky_re_lu_40_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_40"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_41",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_41_output",
+      "blob_weights" : 163,
+      "K" : 256,
+      "blob_biases" : 161,
+      "name" : "conv2d_41",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_40_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_41_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_41",
+      "top" : "leaky_re_lu_41_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_41"
+    },
+    {
+      "bottom" : "add_17_output,leaky_re_lu_41_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_18",
+      "top" : "add_18_output",
+      "type" : "elementwise",
+      "name" : "add_18",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_42",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_42_output",
+      "blob_weights" : 167,
+      "K" : 512,
+      "blob_biases" : 165,
+      "name" : "conv2d_42",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "add_18_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_42_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_42",
+      "top" : "leaky_re_lu_42_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_42"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_43",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_43_output",
+      "blob_weights" : 171,
+      "K" : 256,
+      "blob_biases" : 169,
+      "name" : "conv2d_43",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_42_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_43_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_43",
+      "top" : "leaky_re_lu_43_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_43"
+    },
+    {
+      "bottom" : "add_18_output,leaky_re_lu_43_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_19",
+      "top" : "add_19_output",
+      "type" : "elementwise",
+      "name" : "add_19",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_44",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "batch_normalization_44_output",
+      "blob_weights" : 175,
+      "K" : 512,
+      "blob_biases" : 173,
+      "stride_x" : 2,
+      "name" : "conv2d_44",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 1,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "add_19_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_44_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_44",
+      "top" : "leaky_re_lu_44_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_44"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_45",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_45_output",
+      "blob_weights" : 179,
+      "K" : 1024,
+      "blob_biases" : 177,
+      "name" : "conv2d_45",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_44_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_45_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_45",
+      "top" : "leaky_re_lu_45_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_45"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_46",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_46_output",
+      "blob_weights" : 183,
+      "K" : 512,
+      "blob_biases" : 181,
+      "name" : "conv2d_46",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_45_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_46_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_46",
+      "top" : "leaky_re_lu_46_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_46"
+    },
+    {
+      "bottom" : "leaky_re_lu_44_output,leaky_re_lu_46_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_20",
+      "top" : "add_20_output",
+      "type" : "elementwise",
+      "name" : "add_20",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_47",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_47_output",
+      "blob_weights" : 187,
+      "K" : 1024,
+      "blob_biases" : 185,
+      "name" : "conv2d_47",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "add_20_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_47_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_47",
+      "top" : "leaky_re_lu_47_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_47"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_48",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_48_output",
+      "blob_weights" : 191,
+      "K" : 512,
+      "blob_biases" : 189,
+      "name" : "conv2d_48",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_47_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_48_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_48",
+      "top" : "leaky_re_lu_48_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_48"
+    },
+    {
+      "bottom" : "add_20_output,leaky_re_lu_48_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_21",
+      "top" : "add_21_output",
+      "type" : "elementwise",
+      "name" : "add_21",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_49",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_49_output",
+      "blob_weights" : 195,
+      "K" : 1024,
+      "blob_biases" : 193,
+      "name" : "conv2d_49",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "add_21_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_49_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_49",
+      "top" : "leaky_re_lu_49_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_49"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_50",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_50_output",
+      "blob_weights" : 199,
+      "K" : 512,
+      "blob_biases" : 197,
+      "name" : "conv2d_50",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_49_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_50_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_50",
+      "top" : "leaky_re_lu_50_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_50"
+    },
+    {
+      "bottom" : "add_21_output,leaky_re_lu_50_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_22",
+      "top" : "add_22_output",
+      "type" : "elementwise",
+      "name" : "add_22",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_51",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_51_output",
+      "blob_weights" : 203,
+      "K" : 1024,
+      "blob_biases" : 201,
+      "name" : "conv2d_51",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "add_22_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_51_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_51",
+      "top" : "leaky_re_lu_51_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_51"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_52",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_52_output",
+      "blob_weights" : 207,
+      "K" : 512,
+      "blob_biases" : 205,
+      "name" : "conv2d_52",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_51_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_52_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_52",
+      "top" : "leaky_re_lu_52_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_52"
+    },
+    {
+      "bottom" : "add_22_output,leaky_re_lu_52_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_23",
+      "top" : "add_23_output",
+      "type" : "elementwise",
+      "name" : "add_23",
+      "beta" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_53",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_53_output",
+      "blob_weights" : 211,
+      "K" : 1024,
+      "blob_biases" : 209,
+      "name" : "conv2d_53",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "add_23_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_53_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_53",
+      "top" : "leaky_re_lu_53_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_53"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_54",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_54_output",
+      "blob_weights" : 215,
+      "K" : 512,
+      "blob_biases" : 213,
+      "name" : "conv2d_54",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_53_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_54_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_54",
+      "top" : "leaky_re_lu_54_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_54"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_55",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_55_output",
+      "blob_weights" : 219,
+      "K" : 1024,
+      "blob_biases" : 217,
+      "name" : "conv2d_55",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_54_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_55_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_55",
+      "top" : "leaky_re_lu_55_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_55"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_56",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_56_output",
+      "blob_weights" : 223,
+      "K" : 512,
+      "blob_biases" : 221,
+      "name" : "conv2d_56",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_55_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_56_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_56",
+      "top" : "leaky_re_lu_56_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_56"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_57",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_57_output",
+      "blob_weights" : 227,
+      "K" : 1024,
+      "blob_biases" : 225,
+      "name" : "conv2d_57",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_56_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_57_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_57",
+      "top" : "leaky_re_lu_57_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_57"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_60",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_59_output",
+      "blob_weights" : 231,
+      "K" : 512,
+      "blob_biases" : 229,
+      "name" : "conv2d_60",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_57_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_59_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_59",
+      "top" : "leaky_re_lu_59_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_59"
+    },
+    {
+      "top" : "up_sampling2d_1_output",
+      "use_fractional_scale_factors" : false,
+      "weights" : {
+
+      },
+      "fractional_scaling_factor_y" : 1,
+      "type" : "upsample",
+      "scaling_factor_x" : 2,
+      "mode" : 0,
+      "align_corners" : 0,
+      "bottom" : "leaky_re_lu_59_output",
+      "debug_info" : "up_sampling2d_1",
+      "fractional_scaling_factor_x" : 1,
+      "is_legacy_mode" : 1,
+      "name" : "up_sampling2d_1",
+      "scaling_factor_y" : 2
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "concatenate_1",
+      "top" : "concatenate_1_output",
+      "type" : "concat",
+      "name" : "concatenate_1",
+      "bottom" : "up_sampling2d_1_output,add_19_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_61",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_60_output",
+      "blob_weights" : 235,
+      "K" : 768,
+      "blob_biases" : 233,
+      "name" : "conv2d_61",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "concatenate_1_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_60_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_60",
+      "top" : "leaky_re_lu_60_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_60"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_62",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_61_output",
+      "blob_weights" : 239,
+      "K" : 256,
+      "blob_biases" : 237,
+      "name" : "conv2d_62",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_60_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_61_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_61",
+      "top" : "leaky_re_lu_61_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_61"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_63",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_62_output",
+      "blob_weights" : 243,
+      "K" : 512,
+      "blob_biases" : 241,
+      "name" : "conv2d_63",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_61_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_62_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_62",
+      "top" : "leaky_re_lu_62_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_62"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_64",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_63_output",
+      "blob_weights" : 247,
+      "K" : 256,
+      "blob_biases" : 245,
+      "name" : "conv2d_64",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_62_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_63_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_63",
+      "top" : "leaky_re_lu_63_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_63"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_65",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_64_output",
+      "blob_weights" : 251,
+      "K" : 512,
+      "blob_biases" : 249,
+      "name" : "conv2d_65",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_63_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_64_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_64",
+      "top" : "leaky_re_lu_64_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_64"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_68",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_66_output",
+      "blob_weights" : 255,
+      "K" : 256,
+      "blob_biases" : 253,
+      "name" : "conv2d_68",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_64_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_66_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_66",
+      "top" : "leaky_re_lu_66_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_66"
+    },
+    {
+      "top" : "up_sampling2d_2_output",
+      "use_fractional_scale_factors" : false,
+      "weights" : {
+
+      },
+      "fractional_scaling_factor_y" : 1,
+      "type" : "upsample",
+      "scaling_factor_x" : 2,
+      "mode" : 0,
+      "align_corners" : 0,
+      "bottom" : "leaky_re_lu_66_output",
+      "debug_info" : "up_sampling2d_2",
+      "fractional_scaling_factor_x" : 1,
+      "is_legacy_mode" : 1,
+      "name" : "up_sampling2d_2",
+      "scaling_factor_y" : 2
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "concatenate_2",
+      "top" : "concatenate_2_output",
+      "type" : "concat",
+      "name" : "concatenate_2",
+      "bottom" : "up_sampling2d_2_output,add_11_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_69",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_67_output",
+      "blob_weights" : 259,
+      "K" : 384,
+      "blob_biases" : 257,
+      "name" : "conv2d_69",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "concatenate_2_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_67_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_67",
+      "top" : "leaky_re_lu_67_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_67"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_70",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_68_output",
+      "blob_weights" : 263,
+      "K" : 128,
+      "blob_biases" : 261,
+      "name" : "conv2d_70",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_67_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_68_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_68",
+      "top" : "leaky_re_lu_68_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_68"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_71",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_69_output",
+      "blob_weights" : 267,
+      "K" : 256,
+      "blob_biases" : 265,
+      "name" : "conv2d_71",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_68_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_69_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_69",
+      "top" : "leaky_re_lu_69_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_69"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_72",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_70_output",
+      "blob_weights" : 271,
+      "K" : 128,
+      "blob_biases" : 269,
+      "name" : "conv2d_72",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_69_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_70_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_70",
+      "top" : "leaky_re_lu_70_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_70"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_73",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_71_output",
+      "blob_weights" : 275,
+      "K" : 256,
+      "blob_biases" : 273,
+      "name" : "conv2d_73",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "leaky_re_lu_70_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_71_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_71",
+      "top" : "leaky_re_lu_71_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_71"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_58",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_58_output",
+      "blob_weights" : 279,
+      "K" : 512,
+      "blob_biases" : 277,
+      "name" : "conv2d_58",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "leaky_re_lu_57_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_66",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_65_output",
+      "blob_weights" : 283,
+      "K" : 256,
+      "blob_biases" : 281,
+      "name" : "conv2d_66",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "leaky_re_lu_64_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_74",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_normalization_72_output",
+      "blob_weights" : 287,
+      "K" : 128,
+      "blob_biases" : 285,
+      "name" : "conv2d_74",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "leaky_re_lu_71_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_58_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_58",
+      "top" : "leaky_re_lu_58_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_58"
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_65_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_65",
+      "top" : "leaky_re_lu_65_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_65"
+    },
+    {
+      "alpha" : 0.10000000149011612,
+      "bottom" : "batch_normalization_72_output",
+      "weights" : {
+
+      },
+      "mode" : 2,
+      "debug_info" : "leaky_re_lu_72",
+      "top" : "leaky_re_lu_72_output",
+      "type" : "activation",
+      "name" : "leaky_re_lu_72"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_59",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "layer0Boxes",
+      "blob_weights" : 291,
+      "K" : 1024,
+      "blob_biases" : 289,
+      "name" : "conv2d_59",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 255,
+      "bottom" : "leaky_re_lu_58_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_67",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "layer1Boxes",
+      "blob_weights" : 295,
+      "K" : 512,
+      "blob_biases" : 293,
+      "name" : "conv2d_67",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 255,
+      "bottom" : "leaky_re_lu_65_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv2d_75",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "layer2Boxes",
+      "blob_weights" : 299,
+      "K" : 256,
+      "blob_biases" : 297,
+      "name" : "conv2d_75",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 255,
+      "bottom" : "leaky_re_lu_72_output",
+      "weights" : {
+
+      },
+      "Nx" : 1,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "name" : "l0_ymap_sp_pre",
+      "weights" : {
+
+      },
+      "dst_w" : 169,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 85,
+      "mode" : 0,
+      "bottom" : "layer0Boxes",
+      "debug_info" : "l0_ymap_sp_pre",
+      "dst_seq" : 1,
+      "dst_k" : 3,
+      "top" : "l0_ymap_sp_pre"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l0_ymap_sp_pre",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l0_ymap_sp",
+      "top" : "l0_ymap_sp",
+      "type" : "transpose",
+      "name" : "l0_ymap_sp"
+    },
+    {
+      "bottom" : "l0_ymap_sp",
+      "end" : 2,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l0_raw_rel_xy_sp",
+      "top" : "l0_raw_rel_xy_sp",
+      "type" : "slice",
+      "name" : "l0_raw_rel_xy_sp"
+    },
+    {
+      "bottom" : "l0_raw_rel_xy_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l0_rel_xy_sp",
+      "top" : "l0_rel_xy_sp",
+      "type" : "activation",
+      "name" : "l0_rel_xy_sp"
+    },
+    {
+      "name" : "l0_rel_xy",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 507,
+      "mode" : 0,
+      "bottom" : "l0_rel_xy_sp",
+      "debug_info" : "l0_rel_xy",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l0_rel_xy"
+    },
+    {
+      "bottom" : "",
+      "k" : 2,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 507,
+      "debug_info" : "l0_constant_xy",
+      "constant_blob" : 301,
+      "top" : "l0_constant_xy",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l0_constant_xy"
+    },
+    {
+      "bottom" : "l0_constant_xy,l0_rel_xy",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_xy_offset",
+      "top" : "l0_xy_offset",
+      "type" : "elementwise",
+      "name" : "l0_xy_offset",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l0_xy_offset",
+      "alpha" : 0.076923079788684845,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_xy",
+      "top" : "l0_xy",
+      "type" : "elementwise",
+      "name" : "l0_xy",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l0_ymap_sp",
+      "end" : 4,
+      "start" : 2,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l0_raw_rel_wh_sp",
+      "top" : "l0_raw_rel_wh_sp",
+      "type" : "slice",
+      "name" : "l0_raw_rel_wh_sp"
+    },
+    {
+      "bottom" : "l0_raw_rel_wh_sp",
+      "alpha" : 1,
+      "operation" : 27,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_rel_wh_sp",
+      "top" : "l0_rel_wh_sp",
+      "type" : "elementwise",
+      "name" : "l0_rel_wh_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l0_rel_wh",
+      "weights" : {
+
+      },
+      "dst_w" : 13,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 13,
+      "mode" : 0,
+      "bottom" : "l0_rel_wh_sp",
+      "debug_info" : "l0_rel_wh",
+      "dst_seq" : 1,
+      "dst_k" : 6,
+      "top" : "l0_rel_wh"
+    },
+    {
+      "bottom" : "",
+      "k" : 6,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 13,
+      "debug_info" : "l0_c_anchors",
+      "constant_blob" : 303,
+      "top" : "l0_c_anchors",
+      "w" : 13,
+      "type" : "load_constant",
+      "name" : "l0_c_anchors"
+    },
+    {
+      "bottom" : "l0_c_anchors,l0_rel_wh",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_wh_pre",
+      "top" : "l0_wh_pre",
+      "type" : "elementwise",
+      "name" : "l0_wh_pre",
+      "beta" : 0
+    },
+    {
+      "name" : "l0_wh_offset",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 507,
+      "mode" : 0,
+      "bottom" : "l0_wh_pre",
+      "debug_info" : "l0_wh_offset",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l0_wh_offset"
+    },
+    {
+      "bottom" : "l0_wh_offset",
+      "alpha" : 0.0024038462433964014,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_wh",
+      "top" : "l0_wh",
+      "type" : "elementwise",
+      "name" : "l0_wh",
+      "beta" : 0
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l0_boxes_out_transposed",
+      "top" : "l0_boxes_out_transposed",
+      "type" : "concat",
+      "name" : "l0_boxes_out_transposed",
+      "bottom" : "l0_xy,l0_wh"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l0_boxes_out_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l0_boxes_out",
+      "top" : "l0_boxes_out",
+      "type" : "transpose",
+      "name" : "l0_boxes_out"
+    },
+    {
+      "bottom" : "",
+      "k" : 507,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 4,
+      "debug_info" : "l0_raw_coordinates",
+      "constant_blob" : 305,
+      "top" : "l0_raw_coordinates_constant_in_scale",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l0_raw_coordinates_constant_in_scale"
+    },
+    {
+      "bottom" : "l0_boxes_out,l0_raw_coordinates_constant_in_scale",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_raw_coordinates",
+      "top" : "l0_raw_coordinates",
+      "type" : "elementwise",
+      "name" : "l0_raw_coordinates",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l0_ymap_sp",
+      "end" : 85,
+      "start" : 5,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l0_scores_sp",
+      "top" : "l0_scores_sp",
+      "type" : "slice",
+      "name" : "l0_scores_sp"
+    },
+    {
+      "bottom" : "l0_scores_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l0_probs_sp",
+      "top" : "l0_probs_sp",
+      "type" : "activation",
+      "name" : "l0_probs_sp"
+    },
+    {
+      "bottom" : "l0_ymap_sp",
+      "end" : 5,
+      "start" : 4,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l0_logit_conf_sp",
+      "top" : "l0_logit_conf_sp",
+      "type" : "slice",
+      "name" : "l0_logit_conf_sp"
+    },
+    {
+      "bottom" : "l0_logit_conf_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l0_conf_sp",
+      "top" : "l0_conf_sp",
+      "type" : "activation",
+      "name" : "l0_conf_sp"
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l0_conf_tiled_sp",
+      "top" : "l0_conf_tiled_sp",
+      "type" : "concat",
+      "name" : "l0_conf_tiled_sp",
+      "bottom" : "l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp,l0_conf_sp"
+    },
+    {
+      "bottom" : "l0_probs_sp,l0_conf_tiled_sp",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l0_confprobs_sp",
+      "top" : "l0_confprobs_sp",
+      "type" : "elementwise",
+      "name" : "l0_confprobs_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l0_confprobs_transposed",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 507,
+      "mode" : 0,
+      "bottom" : "l0_confprobs_sp",
+      "debug_info" : "l0_confprobs_transposed",
+      "dst_seq" : 1,
+      "dst_k" : 80,
+      "top" : "l0_confprobs_transposed"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l0_confprobs_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l0_raw_confidence",
+      "top" : "l0_raw_confidence",
+      "type" : "transpose",
+      "name" : "l0_raw_confidence"
+    },
+    {
+      "name" : "l1_ymap_sp_pre",
+      "weights" : {
+
+      },
+      "dst_w" : 676,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 85,
+      "mode" : 0,
+      "bottom" : "layer1Boxes",
+      "debug_info" : "l1_ymap_sp_pre",
+      "dst_seq" : 1,
+      "dst_k" : 3,
+      "top" : "l1_ymap_sp_pre"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l1_ymap_sp_pre",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l1_ymap_sp",
+      "top" : "l1_ymap_sp",
+      "type" : "transpose",
+      "name" : "l1_ymap_sp"
+    },
+    {
+      "bottom" : "l1_ymap_sp",
+      "end" : 2,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l1_raw_rel_xy_sp",
+      "top" : "l1_raw_rel_xy_sp",
+      "type" : "slice",
+      "name" : "l1_raw_rel_xy_sp"
+    },
+    {
+      "bottom" : "l1_raw_rel_xy_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l1_rel_xy_sp",
+      "top" : "l1_rel_xy_sp",
+      "type" : "activation",
+      "name" : "l1_rel_xy_sp"
+    },
+    {
+      "name" : "l1_rel_xy",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 2028,
+      "mode" : 0,
+      "bottom" : "l1_rel_xy_sp",
+      "debug_info" : "l1_rel_xy",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l1_rel_xy"
+    },
+    {
+      "bottom" : "",
+      "k" : 2,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 2028,
+      "debug_info" : "l1_constant_xy",
+      "constant_blob" : 307,
+      "top" : "l1_constant_xy",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l1_constant_xy"
+    },
+    {
+      "bottom" : "l1_constant_xy,l1_rel_xy",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_xy_offset",
+      "top" : "l1_xy_offset",
+      "type" : "elementwise",
+      "name" : "l1_xy_offset",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l1_xy_offset",
+      "alpha" : 0.038461539894342422,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_xy",
+      "top" : "l1_xy",
+      "type" : "elementwise",
+      "name" : "l1_xy",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l1_ymap_sp",
+      "end" : 4,
+      "start" : 2,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l1_raw_rel_wh_sp",
+      "top" : "l1_raw_rel_wh_sp",
+      "type" : "slice",
+      "name" : "l1_raw_rel_wh_sp"
+    },
+    {
+      "bottom" : "l1_raw_rel_wh_sp",
+      "alpha" : 1,
+      "operation" : 27,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_rel_wh_sp",
+      "top" : "l1_rel_wh_sp",
+      "type" : "elementwise",
+      "name" : "l1_rel_wh_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l1_rel_wh",
+      "weights" : {
+
+      },
+      "dst_w" : 26,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 26,
+      "mode" : 0,
+      "bottom" : "l1_rel_wh_sp",
+      "debug_info" : "l1_rel_wh",
+      "dst_seq" : 1,
+      "dst_k" : 6,
+      "top" : "l1_rel_wh"
+    },
+    {
+      "bottom" : "",
+      "k" : 6,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 26,
+      "debug_info" : "l1_c_anchors",
+      "constant_blob" : 309,
+      "top" : "l1_c_anchors",
+      "w" : 26,
+      "type" : "load_constant",
+      "name" : "l1_c_anchors"
+    },
+    {
+      "bottom" : "l1_c_anchors,l1_rel_wh",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_wh_pre",
+      "top" : "l1_wh_pre",
+      "type" : "elementwise",
+      "name" : "l1_wh_pre",
+      "beta" : 0
+    },
+    {
+      "name" : "l1_wh_offset",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 2028,
+      "mode" : 0,
+      "bottom" : "l1_wh_pre",
+      "debug_info" : "l1_wh_offset",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l1_wh_offset"
+    },
+    {
+      "bottom" : "l1_wh_offset",
+      "alpha" : 0.0024038462433964014,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_wh",
+      "top" : "l1_wh",
+      "type" : "elementwise",
+      "name" : "l1_wh",
+      "beta" : 0
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l1_boxes_out_transposed",
+      "top" : "l1_boxes_out_transposed",
+      "type" : "concat",
+      "name" : "l1_boxes_out_transposed",
+      "bottom" : "l1_xy,l1_wh"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l1_boxes_out_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l1_boxes_out",
+      "top" : "l1_boxes_out",
+      "type" : "transpose",
+      "name" : "l1_boxes_out"
+    },
+    {
+      "bottom" : "",
+      "k" : 2028,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 4,
+      "debug_info" : "l1_raw_coordinates",
+      "constant_blob" : 311,
+      "top" : "l1_raw_coordinates_constant_in_scale",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l1_raw_coordinates_constant_in_scale"
+    },
+    {
+      "bottom" : "l1_boxes_out,l1_raw_coordinates_constant_in_scale",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_raw_coordinates",
+      "top" : "l1_raw_coordinates",
+      "type" : "elementwise",
+      "name" : "l1_raw_coordinates",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l1_ymap_sp",
+      "end" : 85,
+      "start" : 5,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l1_scores_sp",
+      "top" : "l1_scores_sp",
+      "type" : "slice",
+      "name" : "l1_scores_sp"
+    },
+    {
+      "bottom" : "l1_scores_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l1_probs_sp",
+      "top" : "l1_probs_sp",
+      "type" : "activation",
+      "name" : "l1_probs_sp"
+    },
+    {
+      "bottom" : "l1_ymap_sp",
+      "end" : 5,
+      "start" : 4,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l1_logit_conf_sp",
+      "top" : "l1_logit_conf_sp",
+      "type" : "slice",
+      "name" : "l1_logit_conf_sp"
+    },
+    {
+      "bottom" : "l1_logit_conf_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l1_conf_sp",
+      "top" : "l1_conf_sp",
+      "type" : "activation",
+      "name" : "l1_conf_sp"
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l1_conf_tiled_sp",
+      "top" : "l1_conf_tiled_sp",
+      "type" : "concat",
+      "name" : "l1_conf_tiled_sp",
+      "bottom" : "l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp,l1_conf_sp"
+    },
+    {
+      "bottom" : "l1_probs_sp,l1_conf_tiled_sp",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l1_confprobs_sp",
+      "top" : "l1_confprobs_sp",
+      "type" : "elementwise",
+      "name" : "l1_confprobs_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l1_confprobs_transposed",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 2028,
+      "mode" : 0,
+      "bottom" : "l1_confprobs_sp",
+      "debug_info" : "l1_confprobs_transposed",
+      "dst_seq" : 1,
+      "dst_k" : 80,
+      "top" : "l1_confprobs_transposed"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l1_confprobs_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l1_raw_confidence",
+      "top" : "l1_raw_confidence",
+      "type" : "transpose",
+      "name" : "l1_raw_confidence"
+    },
+    {
+      "name" : "l2_ymap_sp_pre",
+      "weights" : {
+
+      },
+      "dst_w" : 2704,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 85,
+      "mode" : 0,
+      "bottom" : "layer2Boxes",
+      "debug_info" : "l2_ymap_sp_pre",
+      "dst_seq" : 1,
+      "dst_k" : 3,
+      "top" : "l2_ymap_sp_pre"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l2_ymap_sp_pre",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l2_ymap_sp",
+      "top" : "l2_ymap_sp",
+      "type" : "transpose",
+      "name" : "l2_ymap_sp"
+    },
+    {
+      "bottom" : "l2_ymap_sp",
+      "end" : 2,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l2_raw_rel_xy_sp",
+      "top" : "l2_raw_rel_xy_sp",
+      "type" : "slice",
+      "name" : "l2_raw_rel_xy_sp"
+    },
+    {
+      "bottom" : "l2_raw_rel_xy_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l2_rel_xy_sp",
+      "top" : "l2_rel_xy_sp",
+      "type" : "activation",
+      "name" : "l2_rel_xy_sp"
+    },
+    {
+      "name" : "l2_rel_xy",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 8112,
+      "mode" : 0,
+      "bottom" : "l2_rel_xy_sp",
+      "debug_info" : "l2_rel_xy",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l2_rel_xy"
+    },
+    {
+      "bottom" : "",
+      "k" : 2,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 8112,
+      "debug_info" : "l2_constant_xy",
+      "constant_blob" : 313,
+      "top" : "l2_constant_xy",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l2_constant_xy"
+    },
+    {
+      "bottom" : "l2_constant_xy,l2_rel_xy",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_xy_offset",
+      "top" : "l2_xy_offset",
+      "type" : "elementwise",
+      "name" : "l2_xy_offset",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l2_xy_offset",
+      "alpha" : 0.019230769947171211,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_xy",
+      "top" : "l2_xy",
+      "type" : "elementwise",
+      "name" : "l2_xy",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l2_ymap_sp",
+      "end" : 4,
+      "start" : 2,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l2_raw_rel_wh_sp",
+      "top" : "l2_raw_rel_wh_sp",
+      "type" : "slice",
+      "name" : "l2_raw_rel_wh_sp"
+    },
+    {
+      "bottom" : "l2_raw_rel_wh_sp",
+      "alpha" : 1,
+      "operation" : 27,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_rel_wh_sp",
+      "top" : "l2_rel_wh_sp",
+      "type" : "elementwise",
+      "name" : "l2_rel_wh_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l2_rel_wh",
+      "weights" : {
+
+      },
+      "dst_w" : 52,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 52,
+      "mode" : 0,
+      "bottom" : "l2_rel_wh_sp",
+      "debug_info" : "l2_rel_wh",
+      "dst_seq" : 1,
+      "dst_k" : 6,
+      "top" : "l2_rel_wh"
+    },
+    {
+      "bottom" : "",
+      "k" : 6,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 52,
+      "debug_info" : "l2_c_anchors",
+      "constant_blob" : 315,
+      "top" : "l2_c_anchors",
+      "w" : 52,
+      "type" : "load_constant",
+      "name" : "l2_c_anchors"
+    },
+    {
+      "bottom" : "l2_c_anchors,l2_rel_wh",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_wh_pre",
+      "top" : "l2_wh_pre",
+      "type" : "elementwise",
+      "name" : "l2_wh_pre",
+      "beta" : 0
+    },
+    {
+      "name" : "l2_wh_offset",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 8112,
+      "mode" : 0,
+      "bottom" : "l2_wh_pre",
+      "debug_info" : "l2_wh_offset",
+      "dst_seq" : 1,
+      "dst_k" : 2,
+      "top" : "l2_wh_offset"
+    },
+    {
+      "bottom" : "l2_wh_offset",
+      "alpha" : 0.0024038462433964014,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_wh",
+      "top" : "l2_wh",
+      "type" : "elementwise",
+      "name" : "l2_wh",
+      "beta" : 0
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l2_boxes_out_transposed",
+      "top" : "l2_boxes_out_transposed",
+      "type" : "concat",
+      "name" : "l2_boxes_out_transposed",
+      "bottom" : "l2_xy,l2_wh"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l2_boxes_out_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l2_boxes_out",
+      "top" : "l2_boxes_out",
+      "type" : "transpose",
+      "name" : "l2_boxes_out"
+    },
+    {
+      "bottom" : "",
+      "k" : 8112,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 4,
+      "debug_info" : "l2_raw_coordinates",
+      "constant_blob" : 317,
+      "top" : "l2_raw_coordinates_constant_in_scale",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "l2_raw_coordinates_constant_in_scale"
+    },
+    {
+      "bottom" : "l2_boxes_out,l2_raw_coordinates_constant_in_scale",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_raw_coordinates",
+      "top" : "l2_raw_coordinates",
+      "type" : "elementwise",
+      "name" : "l2_raw_coordinates",
+      "beta" : 0
+    },
+    {
+      "bottom" : "l2_ymap_sp",
+      "end" : 85,
+      "start" : 5,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l2_scores_sp",
+      "top" : "l2_scores_sp",
+      "type" : "slice",
+      "name" : "l2_scores_sp"
+    },
+    {
+      "bottom" : "l2_scores_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l2_probs_sp",
+      "top" : "l2_probs_sp",
+      "type" : "activation",
+      "name" : "l2_probs_sp"
+    },
+    {
+      "bottom" : "l2_ymap_sp",
+      "end" : 5,
+      "start" : 4,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "l2_logit_conf_sp",
+      "top" : "l2_logit_conf_sp",
+      "type" : "slice",
+      "name" : "l2_logit_conf_sp"
+    },
+    {
+      "bottom" : "l2_logit_conf_sp",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "l2_conf_sp",
+      "top" : "l2_conf_sp",
+      "type" : "activation",
+      "name" : "l2_conf_sp"
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "l2_conf_tiled_sp",
+      "top" : "l2_conf_tiled_sp",
+      "type" : "concat",
+      "name" : "l2_conf_tiled_sp",
+      "bottom" : "l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp,l2_conf_sp"
+    },
+    {
+      "bottom" : "l2_probs_sp,l2_conf_tiled_sp",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "l2_confprobs_sp",
+      "top" : "l2_confprobs_sp",
+      "type" : "elementwise",
+      "name" : "l2_confprobs_sp",
+      "beta" : 0
+    },
+    {
+      "name" : "l2_confprobs_transposed",
+      "weights" : {
+
+      },
+      "dst_w" : 1,
+      "version" : 1,
+      "dst_n" : 0,
+      "type" : "reshape",
+      "dst_h" : 8112,
+      "mode" : 0,
+      "bottom" : "l2_confprobs_sp",
+      "debug_info" : "l2_confprobs_transposed",
+      "dst_seq" : 1,
+      "dst_k" : 80,
+      "top" : "l2_confprobs_transposed"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 0,
+      "bottom" : "l2_confprobs_transposed",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "l2_raw_confidence",
+      "top" : "l2_raw_confidence",
+      "type" : "transpose",
+      "name" : "l2_raw_confidence"
+    },
+    {
+      "bottom" : "l0_raw_confidence,l1_raw_confidence,l2_raw_confidence",
+      "weights" : {
+
+      },
+      "hint_fallback_from_metal" : 1,
+      "debug_info" : "raw_confidence",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "top" : "raw_confidence",
+      "type" : "concat",
+      "name" : "raw_confidence"
+    },
+    {
+      "bottom" : "l0_raw_coordinates,l1_raw_coordinates,l2_raw_coordinates",
+      "weights" : {
+
+      },
+      "hint_fallback_from_metal" : 1,
+      "debug_info" : "raw_coordinates",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "top" : "raw_coordinates",
+      "type" : "concat",
+      "name" : "raw_coordinates"
+    }
+  ],
+  "transform_params" : {
+    "image" : {
+      "bias_a" : 0,
+      "bias_g" : 0,
+      "bias_r" : 0,
+      "bias_b" : 0,
+      "center_mean" : 0,
+      "is_network_bgr" : 0,
+      "scale" : 0.0039215688593685627
+    }
+  },
+  "storage" : "model.espresso.weights",
+  "metadata_in_weights" : [
+
+  ],
+  "properties" : {
+
+  },
+  "analyses" : {
+
+  },
+  "format_version" : 200
+}
