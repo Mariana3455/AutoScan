@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E180E222C26E1F000AC41D0 /* CarsImgClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */; };
+		0E180E302C27063E00AC41D0 /* CurrentVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */; };
+		0E24D6ED2C27807A00DDEAF9 /* CarsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */; };
+		0E24D6EF2C27832C00DDEAF9 /* CarsClassifier.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D6EE2C27832C00DDEAF9 /* CarsClassifier.mlmodelc */; };
+		0E24D6F42C27F8D200DDEAF9 /* CarDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */; };
+		0E24D6F72C27F9AE00DDEAF9 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 0E24D6F62C27F9AE00DDEAF9 /* SwiftCSV */; };
+		0E24D70E2C2801B900DDEAF9 /* car_data3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D70B2C2801B900DDEAF9 /* car_data3.csv */; };
+		0E24D7102C2801B900DDEAF9 /* car_data2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D70D2C2801B900DDEAF9 /* car_data2.csv */; };
+		0E24D7142C2831F700DDEAF9 /* audi_a7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */; };
+		0E24D7182C28785B00DDEAF9 /* SavedCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */; };
+		0E24D71A2C287A6F00DDEAF9 /* CarInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */; };
+		0E24D71E2C29899E00DDEAF9 /* car_base.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D71D2C29899E00DDEAF9 /* car_base.dae */; };
+		0E24D7202C2989A200DDEAF9 /* car_base.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D71F2C2989A200DDEAF9 /* car_base.scn */; };
+		0E24D7222C2989A800DDEAF9 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E24D7212C2989A700DDEAF9 /* SceneKit Scene.scn */; };
+		0E24D7282C298A1D00DDEAF9 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */; };
+		0E599C352C298CE800B9CB92 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E599C342C298CE800B9CB92 /* Utilities.swift */; };
 		0E809E2B2C1F545400E11BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */; };
 		0E809E2D2C1F545400E11BC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */; };
 		0E809E2F2C1F545400E11BC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809E2E2C1F545400E11BC8 /* ViewController.swift */; };
@@ -18,7 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CarsImgClassifier.mlmodel; path = ../../../Downloads/CarsImgClassifier.mlmodel; sourceTree = "<group>"; };
+		0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVehicleController.swift; sourceTree = "<group>"; };
+		0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarsClassifier.mlmodel; sourceTree = "<group>"; };
+		0E24D6EE2C27832C00DDEAF9 /* CarsClassifier.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CarsClassifier.mlmodelc; sourceTree = "<group>"; };
+		0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataParser.swift; sourceTree = "<group>"; };
+		0E24D70B2C2801B900DDEAF9 /* car_data3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car_data3.csv; sourceTree = "<group>"; };
+		0E24D70D2C2801B900DDEAF9 /* car_data2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car_data2.csv; sourceTree = "<group>"; };
+		0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = audi_a7.jpeg; sourceTree = "<group>"; };
+		0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCarsViewController.swift; sourceTree = "<group>"; };
+		0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoTableViewCell.swift; sourceTree = "<group>"; };
+		0E24D71D2C29899E00DDEAF9 /* car_base.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = car_base.dae; sourceTree = "<group>"; };
+		0E24D71F2C2989A200DDEAF9 /* car_base.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car_base.scn; sourceTree = "<group>"; };
+		0E24D7212C2989A700DDEAF9 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
+		0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		0E599C342C298CE800B9CB92 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0E809E272C1F545400E11BC8 /* CarVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,12 +62,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E24D6F72C27F9AE00DDEAF9 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E24D71B2C29894D00DDEAF9 /* art */ = {
+			isa = PBXGroup;
+			children = (
+				0E24D7212C2989A700DDEAF9 /* SceneKit Scene.scn */,
+				0E24D71F2C2989A200DDEAF9 /* car_base.scn */,
+				0E24D71D2C29899E00DDEAF9 /* car_base.dae */,
+			);
+			path = art;
+			sourceTree = "<group>";
+		};
 		0E809E1E2C1F545400E11BC8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +98,14 @@
 		0E809E292C1F545400E11BC8 /* CarVision */ = {
 			isa = PBXGroup;
 			children = (
-				0E180E212C26E1F000AC41D0 /* CarsImgClassifier.mlmodel */,
+				0E599C342C298CE800B9CB92 /* Utilities.swift */,
+				0E24D7272C298A1D00DDEAF9 /* ARViewController.swift */,
+				0E24D71B2C29894D00DDEAF9 /* art */,
+				0E24D7132C2831F700DDEAF9 /* audi_a7.jpeg */,
+				0E24D70D2C2801B900DDEAF9 /* car_data2.csv */,
+				0E24D70B2C2801B900DDEAF9 /* car_data3.csv */,
+				0E24D6EC2C27807A00DDEAF9 /* CarsClassifier.mlmodel */,
+				0E24D6EE2C27832C00DDEAF9 /* CarsClassifier.mlmodelc */,
 				0E809E2A2C1F545400E11BC8 /* AppDelegate.swift */,
 				0E809E2C2C1F545400E11BC8 /* SceneDelegate.swift */,
 				0E809E2E2C1F545400E11BC8 /* ViewController.swift */,
@@ -69,6 +114,10 @@
 				0E809E352C1F545500E11BC8 /* LaunchScreen.storyboard */,
 				0E809E382C1F545500E11BC8 /* Info.plist */,
 				0EBAF0332C1F564D002FD85E /* StartViewController.swift */,
+				0E180E2F2C27063E00AC41D0 /* CurrentVehicleController.swift */,
+				0E24D6F32C27F8D100DDEAF9 /* CarDataParser.swift */,
+				0E24D7172C28785B00DDEAF9 /* SavedCarsViewController.swift */,
+				0E24D7192C287A6F00DDEAF9 /* CarInfoTableViewCell.swift */,
 			);
 			path = CarVision;
 			sourceTree = "<group>";
@@ -89,6 +138,9 @@
 			dependencies = (
 			);
 			name = CarVision;
+			packageProductDependencies = (
+				0E24D6F62C27F9AE00DDEAF9 /* SwiftCSV */,
+			);
 			productName = CarVision;
 			productReference = 0E809E272C1F545400E11BC8 /* CarVision.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 0E809E1E2C1F545400E11BC8;
+			packageReferences = (
+				0E24D6F52C27F9AE00DDEAF9 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = 0E809E282C1F545400E11BC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,9 +186,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E24D7202C2989A200DDEAF9 /* car_base.scn in Resources */,
+				0E24D7222C2989A800DDEAF9 /* SceneKit Scene.scn in Resources */,
+				0E24D70E2C2801B900DDEAF9 /* car_data3.csv in Resources */,
+				0E24D7142C2831F700DDEAF9 /* audi_a7.jpeg in Resources */,
+				0E24D6EF2C27832C00DDEAF9 /* CarsClassifier.mlmodelc in Resources */,
 				0E809E342C1F545500E11BC8 /* Assets.xcassets in Resources */,
+				0E24D71E2C29899E00DDEAF9 /* car_base.dae in Resources */,
 				0E809E372C1F545500E11BC8 /* Base in Resources */,
 				0E809E322C1F545400E11BC8 /* Base in Resources */,
+				0E24D7102C2801B900DDEAF9 /* car_data2.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,11 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E180E222C26E1F000AC41D0 /* CarsImgClassifier.mlmodel in Sources */,
 				0E809E2F2C1F545400E11BC8 /* ViewController.swift in Sources */,
 				0EBAF0342C1F564D002FD85E /* StartViewController.swift in Sources */,
+				0E599C352C298CE800B9CB92 /* Utilities.swift in Sources */,
 				0E809E2B2C1F545400E11BC8 /* AppDelegate.swift in Sources */,
+				0E24D7182C28785B00DDEAF9 /* SavedCarsViewController.swift in Sources */,
+				0E24D6F42C27F8D200DDEAF9 /* CarDataParser.swift in Sources */,
+				0E180E302C27063E00AC41D0 /* CurrentVehicleController.swift in Sources */,
+				0E24D6ED2C27807A00DDEAF9 /* CarsClassifier.mlmodel in Sources */,
+				0E24D71A2C287A6F00DDEAF9 /* CarInfoTableViewCell.swift in Sources */,
 				0E809E2D2C1F545400E11BC8 /* SceneDelegate.swift in Sources */,
+				0E24D7282C298A1D00DDEAF9 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +439,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E24D6F52C27F9AE00DDEAF9 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E24D6F62C27F9AE00DDEAF9 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E24D6F52C27F9AE00DDEAF9 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E809E1F2C1F545400E11BC8 /* Project object */;
 }
