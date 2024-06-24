@@ -1,10 +1,7 @@
 import Foundation
 
 class CarDataParser {
-    let csvFileNames: [String] = [
-        "/Users/marianadekhtiarenko/Desktop/CarVision/CarVision/car_data2.csv"
-    ]
-    
+
     var targetMake: String
     var targetModel: String
     var targetYear: Int
@@ -16,24 +13,20 @@ class CarDataParser {
         self.targetYear = targetYear
     }
     
-    func fetchAndParseCSVs() {
-        for csvFileName in csvFileNames {
-            let fileExists = FileManager.default.fileExists(atPath: csvFileName)
-            guard fileExists else {
-                print("File not found: \(csvFileName)")
-                continue
-            }
-            
-            readCSV(from: csvFileName)
+    func fetchAndParseCSV() {
+        guard let csvFileURL = Bundle.main.url(forResource: "car_data2", withExtension: "csv") else {
+            fatalError("CSV file not found in bundle")
         }
+        
+        readCSV(from: csvFileURL)
     }
     
-    private func readCSV(from filePath: String) {
+    private func readCSV(from fileURL: URL) {
         do {
-            let data = try String(contentsOfFile: filePath, encoding: .utf8)
+            let data = try String(contentsOf: fileURL, encoding: .utf8)
             parseCSV(data: data)
         } catch {
-            print("Error reading CSV from \(filePath): \(error.localizedDescription)")
+            print("Error reading CSV from \(fileURL): \(error.localizedDescription)")
         }
     }
     
