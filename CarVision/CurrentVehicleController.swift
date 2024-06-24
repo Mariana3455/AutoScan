@@ -105,6 +105,8 @@ class CurrentVehicleController: UIViewController {
             if let destinationVC = segue.destination as? ARViewController {
                 destinationVC.recognizedCarModel = recognizedCarModel
                 destinationVC.recognizedCarImage = recognizedCarImage
+                destinationVC.carDataParser = carDataParser
+
             }
         }
     }
