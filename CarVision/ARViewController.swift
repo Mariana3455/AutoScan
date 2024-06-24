@@ -15,6 +15,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var recognizedCarImage: UIImage?
     var recognizedCarModel: String?
     var additionalText: String?
+    var carDataParser: CarDataParser?
     
     @IBOutlet weak var arView: ARSCNView!
     @IBOutlet weak var carTextLabel: UILabel!
@@ -25,17 +26,19 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var windowNode: SCNNode!
     var engineNode: SCNNode!
     var doorNode: SCNNode!
+    var lightsNode: SCNNode!
     private var currentModelNode: SCNNode?
     private var currentText: String?
     private var motionManager: CMMotionManager?
     
-    private var carDataParser: CarDataParser?
+    
     private var addCarButtonEnabled = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScene()
         setupGestureRecognizers()
+        resetLabelText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +70,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(floorNode)
     }
     
-    // MARK: - Setup Scene and Session
+  
     
     private func setupScene() {
         arView.delegate = self
@@ -94,24 +97,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         arView.addGestureRecognizer(pinchGesture)
     }
     
-    //    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
-    //        let tapLocation = gesture.location(in: arView)
-    //        let hitTestResults = arView.hitTest(tapLocation, options: [:])
-    //
-    //        guard let hitResult = hitTestResults.first else { return }
-    //        let tappedNode = hitResult.node
-    //
-    //        // Check if the tapped node is the wheels node
-    //        if tappedNode.name == "wheels" {
-    //            // Update carTextLabel with Driven_Wheels information
-    //            if let drivenWheels = carDataParser?.carDetails?["Driven_Wheels"] {
-    //                carTextLabel.text = "Driven Wheels: \(drivenWheels)"
-    //            } else {
-    //                carTextLabel.text = "Driven Wheels not available"
-    //            }
-    //        }
-    //    }
-    
     
     @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
         let tapLocation = gesture.location(in: arView)
@@ -122,63 +107,87 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         switch tappedNode.name {
         case "wheels":
             handleTapOnWheelsNode()
-        case "window":
-            handleTapOnWindowNode()
         case "engine":
             handleTapOnEngineNode()
         case "door":
             handleTapOnDoorNode()
+        case "car":
+            handleTapOnCarNode()
         default:
             resetLabelText()
         }
         
     }
+
+    
     
     private func resetLabelText() {
-        carTextLabel.text = "Tap on the car to get info"
-    }
+            var details = "Tap on the car to get info\n"
+            
+            if let make = carDataParser?.carDetails?["Make"] {
+                details += "Make: \(make)\n"
+            } else {
+                details += "Make not available\n"
+            }
+            
+            if let popularity = carDataParser?.carDetails?["Popularity"] {
+                details += "Popularity: \(popularity)\n"
+            } else {
+                details += "Popularity not available\n"
+            }
+            
+            if let model = carDataParser?.carDetails?["Model"] {
+                details += "Model: \(model)\n"
+            } else {
+                details += "Model not available\n"
+            }
+            
+            if let year = carDataParser?.carDetails?["Year"] {
+                details += "Year: \(year)\n"
+            } else {
+                details += "Year not available\n"
+            }
+            
+            carTextLabel.text = details.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
     
     private func updateCarTextLabel(with text: String) {
         carTextLabel.text = text
     }
     @objc private func handleTapOnWheelsNode() {
- 
-        
         if let drivenWheels = carDataParser?.carDetails?["Driven_Wheels"] {
-            updateCarTextLabel(with: "Driven Wheels: \(drivenWheels)")
+               updateCarTextLabel(with: "Driven Wheels: \(drivenWheels)")
+           } else {
+               updateCarTextLabel(with: "Driven Wheels not available")
+           }
+    }
+    
+    @objc private func handleTapOnCarNode() {
+        if let car = carDataParser?.carDetails?["Vehicle Size"] {
+            updateCarTextLabel(with: "Car Size: \(car)")
         } else {
-            updateCarTextLabel(with: "Driven Wheels not available")
+            updateCarTextLabel(with: "Car Type not available")
         }
     }
     
-    @objc private func handleTapOnWindowNode() {
-        
-        
-        if let windowType = carDataParser?.carDetails?["Window_Type"] {
-            updateCarTextLabel(with: "Window Type: \(windowType)")
-        } else {
-            updateCarTextLabel(with: "Window Type not available")
-        }
-    }
+//    @objc private func handleTapOnWindowNode() {
+//        if let windowType = carDataParser?.carDetails?["Window_Type"] {
+//            updateCarTextLabel(with: "Window Type: \(windowType)")
+//        } else {
+//            updateCarTextLabel(with: "Window Type not available")
+//        }
+//    }
     
     @objc private func handleTapOnEngineNode() {
         
         
-        if let engineType = carDataParser?.carDetails?["Engine_Type"] {
-            updateCarTextLabel(with: "Engine Type: \(engineType)")
-        } else {
-            updateCarTextLabel(with: "Engine Type not available")
-        }
+        let details = fetchCarDetails(keys: ["Engine HP", "Engine Cylinders", "Engine Fuel Type","city mpg","highway MPG", "MSRP"])
+               updateCarTextLabel(with: details)
     }
     
     @objc private func handleTapOnDoorNode() {
-      
-        
-        if let doorCount = carDataParser?.carDetails?["Door_Count"] {
-            updateCarTextLabel(with: "Door Count: \(doorCount)")
-        } else {
-            updateCarTextLabel(with: "Door Count not available")
-        }
+        let details = fetchCarDetails(keys: ["Vehicle Style"])
+                updateCarTextLabel(with: details)
     }
     
     @objc private func handlePan(_ gesture: UIPanGestureRecognizer) {
@@ -209,6 +218,20 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    private func fetchCarDetails(keys: [String]) -> String {
+           var details = ""
+           
+           for key in keys {
+               if let value = carDataParser?.carDetails?[key] {
+                   details += "\(key): \(value)\n"
+               } else {
+                   details += "\(key) not available\n"
+               }
+           }
+           
+           return details.trimmingCharacters(in: .whitespacesAndNewlines)
+       }
+    
     // MARK: - Add Car Button Action
     private func enableAddCarButton() {
         addCar.isEnabled = true
@@ -235,7 +258,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             orientation.z + location.z
         )
         
-        if let scene = SCNScene(named: "car2.scn") {
+        if let scene = SCNScene(named: "car3.scn") {
             print("Successfully loaded scene 'car2.scn'")
             
             let carContainerNode = SCNNode()
@@ -243,19 +266,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             if let carNode = scene.rootNode.childNode(withName: "car", recursively: true) {
                 print("Found node with name 'car'")
                 carNode.position = currentPositionOfCamera
-                //                let fadeInAction = SCNAction.fadeIn(duration: 0.5)
-                //                let scaleUpAction = SCNAction.scale(to: 1.2, duration: 0.5)
-                //                let scaleDownAction = SCNAction.scale(to: 1.0, duration: 0.5)
-                //                let sequenceAction = SCNAction.sequence([fadeInAction, scaleUpAction, scaleDownAction])
-                //
-                //
+              
                 
                 carContainerNode.addChildNode(carNode)
                 self.carNode = carNode
                 
                 if let geometry = carNode.geometry {
                     let material = SCNMaterial()
-                    material.diffuse.contents = UIColor.white
+                    material.diffuse.contents = UIColor.gray
                     geometry.materials = [material]
                 }
                 
@@ -284,6 +302,30 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 } else {
                     print("Failed to find node with name 'wheels' in scene")
                 }
+                
+                
+                
+                if let lightsNode = scene.rootNode.childNode(withName: "lights", recursively: true) {
+                    print("Found node with name 'lights'")
+                    
+                    let rotation = SCNAction.rotateBy(x: -.pi/2, y: 0, z: 0, duration: 0.3)
+                    lightsNode.runAction(rotation)
+                    
+                    let lightsPosition = SCNVector3(x: 0, y: 0, z: 0)
+                    lightsNode.position = lightsPosition
+                    
+                    if let geometry = lightsNode.geometry {
+                        let material = SCNMaterial()
+                        material.diffuse.contents = UIColor.yellow
+                        geometry.materials = [material]
+                    }
+                    
+                    carNode.addChildNode(lightsNode)
+                    self.wheelNode = lightsNode
+                } else {
+                    print("Failed to find node with name 'lights' in scene")
+                }
+                
                 
                 
                 if let windowNode = scene.rootNode.childNode(withName: "window", recursively: true) {
@@ -321,7 +363,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     
                     if let geometry = engineNode.geometry {
                         let material = SCNMaterial()
-                        material.diffuse.contents = UIColor.red
+                        material.diffuse.contents = UIColor.darkGray
                         geometry.materials = [material]
                     }
                     
@@ -340,7 +382,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                     
                     if let geometry = doorNode.geometry {
                         let material = SCNMaterial()
-                        material.diffuse.contents = UIColor.gray
+                        material.diffuse.contents = UIColor.lightGray
                         geometry.materials = [material]
                     }
                     carNode.addChildNode(doorNode)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lVr-ei-EFZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rLA-Df-fDv">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.3255813953488" y="3.218884120171674"/>
+            <point key="canvasLocation" x="1940.9302325581396" y="3.218884120171674"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="rcj-5c-aVJ">
@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RO-e7-hr8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="3"/>
+            <point key="canvasLocation" x="2955.3488372093025" y="2.5751072961373391"/>
         </scene>
         <!--Current Vehicle Controller-->
         <scene sceneID="gR1-qP-ZB7">
@@ -342,6 +342,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yYH-H3-Y60"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="carBodyType" destination="ZBj-ex-3HQ" id="YPt-O4-8r3"/>
                         <outlet property="carImage" destination="8qU-hZ-B1T" id="Aby-Db-nah"/>
@@ -353,11 +354,12 @@
                         <outlet property="saveCarInfoButton" destination="GzJ-uG-TZB" id="tKO-cb-qHW"/>
                         <outlet property="viewARButton" destination="bMB-ZQ-1yZ" id="0CB-hh-FKV"/>
                         <segue destination="EWr-rr-nRR" kind="show" id="x82-xf-htC"/>
+                        <segue destination="9Gs-sT-nru" kind="show" identifier="showARView" id="sOL-GJ-Niz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bv-e3-Iqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3089.3023255813955" y="1.9313304721030045"/>
+            <point key="canvasLocation" x="3925" y="55"/>
         </scene>
         <!--Saved Cars View Controller-->
         <scene sceneID="nJ3-BE-Dbb">
@@ -417,67 +419,84 @@
                     <navigationItem key="navigationItem" id="XKI-tU-cnY"/>
                     <connections>
                         <outlet property="tableView" destination="eLg-RY-f4X" id="b5D-al-d2p"/>
-                        <segue destination="69O-4z-LlI" kind="show" identifier="showARView" id="fON-hF-Fri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKe-h7-d63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955.8139534883721" y="4.5064377682403434"/>
+            <point key="canvasLocation" x="4009" y="-658"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="qVf-OW-5Qn">
+        <scene sceneID="eCc-ds-IEl">
             <objects>
-                <viewController id="69O-4z-LlI" customClass="ARViewController" customModule="CarVision" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XCD-bk-ad4">
+                <viewController id="9Gs-sT-nru" customClass="ARViewController" customModule="CarVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AAz-C0-HKJ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="showARView" translatesAutoresizingMaskIntoConstraints="NO" id="Uwc-ki-gKg">
-                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JU-Td-5Iy">
+                                <rect key="frame" x="0.0" y="59" width="430" height="822"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-yR-nIt">
-                                <rect key="frame" x="177.66666666666666" y="786" width="74.666666666666657" height="35"/>
-                                <color key="backgroundColor" red="0.94509803920000002" green="0.69803921570000005" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="show"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQj-dt-TGo">
+                                <rect key="frame" x="179" y="820.66666666666663" width="72" height="34.333333333333371"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="0.94999999999999996"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Model" titleAlignment="center">
+                                    <backgroundConfiguration key="background" cornerRadius="66"/>
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addCar:" destination="9Gs-sT-nru" eventType="touchUpInside" id="pQX-aZ-v77"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Car detail info" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiX-0q-bed">
+                                <rect key="frame" x="246" y="646" width="111" height="21.666666666666629"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="9Uu-U7-cx4"/>
+                        <viewLayoutGuide key="safeArea" id="LdM-9d-a0V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9Uu-U7-cx4" firstAttribute="trailing" secondItem="Uwc-ki-gKg" secondAttribute="trailing" id="6EQ-LE-yC2"/>
-                            <constraint firstItem="yi5-yR-nIt" firstAttribute="leading" secondItem="9Uu-U7-cx4" secondAttribute="leading" constant="177.66666666666666" id="He5-oK-vQ5"/>
-                            <constraint firstItem="Uwc-ki-gKg" firstAttribute="top" secondItem="9Uu-U7-cx4" secondAttribute="top" id="PCc-3E-awt"/>
-                            <constraint firstItem="yi5-yR-nIt" firstAttribute="centerX" secondItem="XCD-bk-ad4" secondAttribute="centerX" id="VqC-9Q-Eil"/>
-                            <constraint firstItem="yi5-yR-nIt" firstAttribute="top" secondItem="9Uu-U7-cx4" secondAttribute="top" constant="683" id="Y0C-zb-ZzA"/>
-                            <constraint firstItem="9Uu-U7-cx4" firstAttribute="bottom" secondItem="Uwc-ki-gKg" secondAttribute="bottom" id="ngH-dm-v4b"/>
-                            <constraint firstItem="Uwc-ki-gKg" firstAttribute="leading" secondItem="9Uu-U7-cx4" secondAttribute="leading" id="xcp-qP-PWm"/>
+                            <constraint firstItem="LdM-9d-a0V" firstAttribute="trailing" secondItem="LiX-0q-bed" secondAttribute="trailing" constant="73" id="8Nl-XJ-PbL"/>
+                            <constraint firstItem="6JU-Td-5Iy" firstAttribute="top" secondItem="AAz-C0-HKJ" secondAttribute="topMargin" constant="-44" id="bSh-ju-bQn"/>
+                            <constraint firstItem="AQj-dt-TGo" firstAttribute="centerX" secondItem="AAz-C0-HKJ" secondAttribute="centerX" id="cqn-Cs-HUh"/>
+                            <constraint firstItem="LiX-0q-bed" firstAttribute="top" secondItem="LdM-9d-a0V" secondAttribute="top" constant="543" id="f0Z-gJ-n18"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AQj-dt-TGo" secondAttribute="bottom" constant="-6" id="fDe-TQ-Ip3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="6JU-Td-5Iy" secondAttribute="bottom" constant="-32" id="r5X-xy-Br5"/>
+                            <constraint firstItem="AQj-dt-TGo" firstAttribute="centerX" secondItem="6JU-Td-5Iy" secondAttribute="centerX" id="s0c-7e-lbM"/>
+                            <constraint firstItem="6JU-Td-5Iy" firstAttribute="leading" secondItem="LdM-9d-a0V" secondAttribute="leading" id="wlN-pd-smd"/>
+                            <constraint firstItem="LiX-0q-bed" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LdM-9d-a0V" secondAttribute="leading" id="z3l-KB-y0p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aq4-ys-0Qy"/>
+                    <navigationItem key="navigationItem" id="t8q-Lv-9FB"/>
+                    <connections>
+                        <outlet property="addCar" destination="AQj-dt-TGo" id="MvR-9D-fmv"/>
+                        <outlet property="arView" destination="6JU-Td-5Iy" id="zXD-39-0CE"/>
+                        <outlet property="carTextLabel" destination="LiX-0q-bed" id="GIF-PZ-IwO"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PmU-hA-tFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Si-mU-5Vd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4934" y="5"/>
+            <point key="canvasLocation" x="4893.4883720930229" y="2.5751072961373391"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ZNa-Z0-QT4">
+        <scene sceneID="jyW-iW-uKq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVr-ei-EFZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rLA-Df-fDv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qf-Gb-WnL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YAj-rK-vH9">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tv3-do-GoX"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Tss-dw-E21"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eve-6u-UoN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAb-Vt-qef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1042.3255813953488" y="3.218884120171674"/>
         </scene>
     </scenes>
     <resources>
@@ -487,16 +506,22 @@
         <image name="hare.fill" catalog="system" width="128" height="88"/>
         <image name="transmission" catalog="system" width="128" height="122"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
